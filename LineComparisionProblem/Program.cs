@@ -22,7 +22,7 @@ namespace LineComparisionProblem
             y2 = Convert.ToInt32(Console.ReadLine());
 
             /// Finding Length 1
-            int Length1 = toFindLength(x1, y1, x2, y2);
+            int Length1 = ToFindLength(x1, y1, x2, y2);
 
             /// taking the User Inputs From Console
             x1 = Convert.ToInt32(Console.ReadLine());
@@ -31,17 +31,12 @@ namespace LineComparisionProblem
             y2 = Convert.ToInt32(Console.ReadLine());
 
             /// Finding Length 2
-            int Length2 = toFindLength(x1, y1, x2, y2);
+            int Length2 = ToFindLength(x1, y1, x2, y2);
 
             /// By Using Equals() Method 
-            /// To Checks, If Length1 and Length2 are Equall it Will Give True
-            /// If Both are Not Equal it Will Give False
             Console.WriteLine(Length1.Equals(Length2));
 
             /// By Using CompareTo() Method
-            /// To Checks, If Length1 and Length2 are equal, It will Give Value zero (ie, 0)
-            /// If Length1 is Lesser than Length2, It Will Give Value Minus one (ie, -1)
-            /// If Length1 is Greater Than Length2, It Will Give Value one (ie, 1)
             Console.WriteLine(Length1.CompareTo(Length2));
         }
 
@@ -53,7 +48,7 @@ namespace LineComparisionProblem
         /// <param name="x2">The x2.</param>
         /// <param name="y2">The y2.</param>
         /// <returns></returns>
-        public static int toFindLength(int x1, int y1, int x2, int y2)
+        public static int ToFindLength(int x1, int y1, int x2, int y2)
         {
             /// Calculating Length
             /// Returns a value of Length to integer value
