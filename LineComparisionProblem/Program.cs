@@ -1,4 +1,23 @@
-﻿using System;
+/*
+ * 
+ *  C# CODING STANDARDS - LINE SPACE
+ *  NOTE - A SINGLE BLANK LINE SEPARATES THE TWO BLOCKS i.e. USING STATEMENTS, CLASS DECLARATION, etc
+ */
+
+/******************************************************************************
+ *  Compilation:  C:\Users\Santhu\source\repos\LineComparisionProblem_C\bin\Debug\netcoreapp3.1\LineComparisionProblem_C.exe
+ *  Execution:    LineComparisionProblem_C.exe
+ *  
+ *  Purpose: Computing Comparision Between Two Lengths
+ *
+ *  @author  Shashidhar C
+ *  @version 1.0
+ *  @since   18-10-2020
+ *
+ ******************************************************************************/
+
+/// Including the requried assemblies in to the program
+using System;
 
 namespace LineComparisionProblem
 {
@@ -10,49 +29,47 @@ namespace LineComparisionProblem
         /// <param name="args">The arguments.</param>
         static void Main(string[] args)
         {
-            /// variables
-            int x1, x2, y1, y2;
-
-            /// Taking the User Inputs From Console
-            /// Calling a toFindLength() Method to compute Length
-            Console.WriteLine("Enter the Values of (x1,y1),(x2,y2) Points :");
-            x1 = Convert.ToInt32(Console.ReadLine());
-            x2 = Convert.ToInt32(Console.ReadLine());
-            y1 = Convert.ToInt32(Console.ReadLine());
-            y2 = Convert.ToInt32(Console.ReadLine());
-
-            /// Finding Length 1
-            int Length1 = ToFindLength(x1, y1, x2, y2);
-
-            /// taking the User Inputs From Console
-            x1 = Convert.ToInt32(Console.ReadLine());
-            x2 = Convert.ToInt32(Console.ReadLine());
-            y1 = Convert.ToInt32(Console.ReadLine());
-            y2 = Convert.ToInt32(Console.ReadLine());
-
-            /// Finding Length 2
-            int Length2 = ToFindLength(x1, y1, x2, y2);
-
-            /// By Using Equals() Method 
-            Console.WriteLine(Length1.Equals(Length2));
-
-            /// By Using CompareTo() Method
-            Console.WriteLine(Length1.CompareTo(Length2));
+            /// Computation
+            Program program = new Program();
+            Console.WriteLine("If get 0 (both are Equal), get 1 (Length1 is greater than Length2)," +
+                "get -1 (Length1 is lesser than Length2) :: "+program.ComputeMethod());
         }
 
         /// <summary>
-        /// Function to Calculate Length
+        /// Computes the method.
         /// </summary>
-        /// <param name="x1">The x1.</param>
-        /// <param name="y1">The y1.</param>
-        /// <param name="x2">The x2.</param>
-        /// <param name="y2">The y2.</param>
         /// <returns></returns>
-        public static int ToFindLength(int x1, int y1, int x2, int y2)
+        public int ComputeMethod()
         {
-            /// Calculating Length
-            /// Returns a value of Length to integer value
-            return (int)Math.Sqrt(Math.Pow(x2 - x1, 2) + Math.Pow(y2 - y1, 2));
+            /// Local Variables
+            int length1 = 0, length2 = 0;
+
+            /// By Looping Untill Condition ends
+            for (int i = 1; i <= 2; i++)
+            {
+                /// Taking User Inputs from Console
+                Console.WriteLine("Inputs for Two Lines " +i);
+                Console.WriteLine("Enter the Value of (x1) :");
+                int x1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter the Value of (x2) :");
+                int x2 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter the Value of (y1) :");
+                int y1 = Convert.ToInt32(Console.ReadLine());
+                Console.WriteLine("Enter the Value of (y2) :");
+                int y2 = Convert.ToInt32(Console.ReadLine());
+                if (i == 1)
+                {
+                    /// Calculating Length of Line 1
+                    length1 =(int)Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+                }
+                if (i == 2)
+                {
+                    /// Calculating the Length of Line 2
+                    length2 = (int)Math.Sqrt((x2 - x1) * (x2 - x1) + (y2 - y1) * (y2 - y1));
+                }
+            }
+            /// It Returns a Value 
+            return length1.CompareTo(length2);
         }
     }
 }
