@@ -5,7 +5,7 @@
  */
 
 /******************************************************************************
- *  Compilation:  C:\Users\Santhu\source\repos\LineComparisionProblem_C\bin\Debug\netcoreapp3.1\LineComparisionProblem_C.exe
+ *  Compilation:  C:\Users\sasic\source\repos\LineComparisionProblem_C\bin\Debug\netcoreapp3.1\LineComparisionProblem_C.exe
  *  Execution:    LineComparisionProblem_C.exe
  *  
  *  Purpose: Computing Comparision Between Two Lengths
