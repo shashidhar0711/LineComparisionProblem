@@ -16,7 +16,7 @@
  *
  ******************************************************************************/
 
-/// Checking for web hook demo test by adding comments
+/// Checking for web hook demo test
 /// Including the requried assemblies in to the program
 using System;
 
