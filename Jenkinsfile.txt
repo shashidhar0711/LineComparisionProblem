@@ -1,0 +1,23 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('git checkout') {
+            steps {
+                git url: 'https://github.com/shashidhar0711/LineComparisionProblem'
+            }
+        }
+        
+        stage('docker build') {
+            steps {
+                sh 'docker build -t sampledockerimage .'
+            }
+        }
+        
+        stage('docker run') {
+            steps {
+                sh 'docker run sampledockerimage'
+            }
+        }
+    }
+}
